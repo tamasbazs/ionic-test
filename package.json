@@ -42,7 +42,7 @@
     "plugins": {
       "sentry-cordova": {}
     }
-  }
+  },
   "config": {
     "ionic_generate_source_map": "true"
   }
