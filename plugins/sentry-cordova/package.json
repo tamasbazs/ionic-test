@@ -1,0 +1,136 @@
+{
+  "_from": "sentry-cordova@^0.9.1",
+  "_id": "sentry-cordova@0.9.1",
+  "_inBundle": false,
+  "_integrity": "sha1-yvqDNbO9xmrrdRGf20UaFke1L6A=",
+  "_location": "/sentry-cordova",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "sentry-cordova@^0.9.1",
+    "name": "sentry-cordova",
+    "escapedName": "sentry-cordova",
+    "rawSpec": "^0.9.1",
+    "saveSpec": null,
+    "fetchSpec": "^0.9.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sentry-cordova/-/sentry-cordova-0.9.1.tgz",
+  "_shasum": "cafa8335b3bdc66aeb75119fdb451a1647b52fa0",
+  "_spec": "sentry-cordova@^0.9.1",
+  "_where": "/Users/tamasbazsonyi/Development/conference",
+  "bugs": {
+    "url": "https://github.com/getsentry/sentry-cordova/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "sentry-cordova",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {
+    "@sentry/browser": "0.5.2",
+    "@sentry/core": "0.5.2",
+    "@sentry/shim": "0.5.2",
+    "@sentry/wizard": "^0.9.5"
+  },
+  "deprecated": false,
+  "description": "Official Sentry SDK for Cordova",
+  "devDependencies": {
+    "@sentry/typescript": "^0.5.2",
+    "@types/cordova": "0.0.34",
+    "@types/jest": "^22.2.3",
+    "@types/node": "^9.6.5",
+    "codecov": "^3.0.0",
+    "jest": "^22.4.3",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.12.1",
+    "prettier-check": "^2.0.0",
+    "raven-js": "^3.24.1",
+    "replace-in-file": "^3.4.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.58.0",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-shim": "^1.0.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "ts-jest": "^22.4.3",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.10.0",
+    "tslint-eslint-rules": "^5.1.0",
+    "typescript": "^2.8.1",
+    "vrsource-tslint-rules": "^5.8.2"
+  },
+  "homepage": "https://github.com/getsentry/sentry-cordova#readme",
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "./tsconfig.json"
+      }
+    },
+    "collectCoverage": true,
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "modulePathIgnorePatterns": [],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "\\.d\\.(jsx?|tsx?)$",
+      "\\.no-jest\\.(jsx?|tsx?)$"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "sentry",
+    "debugging",
+    "errors",
+    "exceptions",
+    "logging"
+  ],
+  "license": "MIT",
+  "main": "dist/js/sentry-cordova.js",
+  "name": "sentry-cordova",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/getsentry/sentry-cordova.git"
+  },
+  "scripts": {
+    "build": "run-s clean build:typescript build:bundle",
+    "build:bundle": "rollup --config",
+    "build:typescript": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist coverage",
+    "codecov": "codecov",
+    "fix": "run-s fix:tslint fix:prettier",
+    "fix:prettier": "prettier --write \"{src,test}/**/*.ts\"",
+    "fix:tslint": "tslint --fix -t stylish -p .",
+    "jest": "jest",
+    "lint": "run-s lint:prettier lint:tslint",
+    "lint:prettier": "prettier-check \"{src,test}/**/*.ts\"",
+    "lint:tslint": "tslint -t stylish -p .",
+    "postversion": "git push && git push --tags",
+    "preversion:changelog": "grep -q -F \"## v$npm_package_version\" CHANGELOG.md",
+    "test": "run-s test:browser",
+    "test:browser": "run-s build jest",
+    "test:watch": "jest --watch --notify",
+    "version": "run-s preversion:changelog version:bump test",
+    "version:bump": "node ./scripts/version-bump.js && git add -A"
+  },
+  "types": "dist/js/sentry-cordova.d.ts",
+  "version": "0.9.1"
+}
